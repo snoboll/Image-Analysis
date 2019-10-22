@@ -13,9 +13,9 @@ function [S] = im2segment(im)
     %Looping over the found segments and setting each pixel in S to
     %1 if the corresponding pixel in L is matching the current kk, 0 otherwise.
     for kk = 1:nrsg
-        if(sum(sum(L == kk)) > 20)
+        if(sum(sum(L == kk)) > 20
             S{nn} = L == kk;
-            nn = nn +1;
+            
         end
     end
 end

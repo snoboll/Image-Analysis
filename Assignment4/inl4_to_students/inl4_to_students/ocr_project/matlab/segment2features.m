@@ -32,6 +32,8 @@ function features = segment2features(B)
 
      leftsum = topleftsum+midleftsum+botleftsum;
      rightsum = toprightsum+midrightsum+botrightsum;
+     
+     pxl_per_area = totpxl/area;
 
-     features = 1000*[totpxl, topleftsum, midleftsum, botleftsum, toprightsum, midrightsum, botrightsum]./area;
+     features = 1000*[pxl_per_area, topleftsum, midleftsum, botleftsum, toprightsum, midrightsum, botrightsum]./totpxl;
 end

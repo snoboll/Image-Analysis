@@ -14,7 +14,7 @@ n = M*N; %Number of image pixels
 
 mu0 = mean_bg;
 mu1 = mean_ch;
-lambda = 2; %2 seems like a good value for lambda
+lambda = 2;%2 seems like a good value for lambda
 
 Neighbors = edges4connected(M,N);
 i=Neighbors(:,1);
@@ -22,7 +22,7 @@ j=Neighbors(:,2);
 
 A = sparse(i,j,lambda,n,n);
 
-T = [(I(:)-mu1).^2./(2*std_ch^2) + log(sqrt(2*pi*std_ch^2)), (I(:)-mu0).^2./(2*std_bg^2) + log(sqrt(2*pi*std_bg^2))];
+T = [(I(:)-mu1)., -log(normpdf(im(:), mu1, std_ch))];
 T = sparse(T);
 
 [E, Theta] = maxflow(A,T);
