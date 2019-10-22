@@ -8,6 +8,7 @@ std_bg = std(background_values)
 
 %% task 4_2_2
 I = im;
+imshow(im);
 [M, N] = size(I);
 n = M*N; %Number of image pixels
 
@@ -28,5 +29,5 @@ T = sparse(T);
 Theta = reshape(Theta,M,N);
 Theta = double(Theta);
 
-imshow(Theta);
+%imshow(Theta);
 
