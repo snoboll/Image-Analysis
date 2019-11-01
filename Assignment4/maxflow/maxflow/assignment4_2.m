@@ -16,9 +16,9 @@ mu0 = mean_bg;
 mu1 = mean_ch;
 lambda = 2; %2 seems like a good value for lambda
 
-Neighbors = edges4connected(M,N);
-i=Neighbors(:,1);
-j=Neighbors(:,2);
+Neighbours = edges4connected(M,N);
+i=Neighbours(:,1);
+j=Neighbours(:,2);
 
 A = sparse(i,j,lambda,n,n);
 
@@ -29,5 +29,5 @@ T = sparse(T);
 Theta = reshape(Theta,M,N);
 Theta = double(Theta);
 
-%imshow(Theta);
+imshow(Theta);
 
